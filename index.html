@@ -1,0 +1,1071 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>林杰铭 · AI + RPA 自动化方案合集</title>
+<meta name="description" content="5 年一线经验，6 类已落地的 AI + RPA 自动化方案：电商全平台、供应链集成、企业级 AI 智能体、数据监控预警。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://l-jimy.github.io/resume/">
+<meta property="og:title" content="林杰铭 · AI + RPA 自动化方案合集">
+<meta property="og:description" content="5 年一线经验，6 类已落地的自动化方案：电商全平台 / 供应链集成 / AI 智能体 / 数据监控。">
+<meta property="og:image" content="https://l-jimy.github.io/resume/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="林杰铭 · AI + RPA 自动化方案合集">
+<meta name="twitter:description" content="5 年一线经验，6 类已落地的自动化方案。">
+<meta name="twitter:image" content="https://l-jimy.github.io/resume/share-card.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #070a14;
+    --bg-2: #0d1326;
+    --card: #121b36;
+    --border: #1c2948;
+    --text: #e5e9f7;
+    --text-dim: #8a94b8;
+    --text-mute: #5c6890;
+    --accent: #6c7cff;
+    --accent-2: #a855f7;
+    --accent-3: #22d3ee;
+    --danger: #ef4444;
+    --success: #34d399;
+    --warn: #f59e0b;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+    overflow-x: hidden; perspective: 1000px;
+  }
+  ::selection { background: rgba(108,124,255,0.3); color: white; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* 导航 */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; padding: 16px 0;
+    background: rgba(7, 10, 20, 0.85); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(108,124,255,0.1); z-index: 100;
+  }
+  nav .container { display: flex; justify-content: space-between; align-items: center; }
+  nav .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 17px; font-weight: 700;
+  }
+  nav .brand .logo-mark {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: linear-gradient(135deg, #6c7cff, #a855f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: white;
+  }
+  nav .brand .name span.hl {
+    background: linear-gradient(135deg, #6c7cff, #a855f7, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  nav .links { display: flex; gap: 28px; }
+  nav .links a {
+    color: var(--text-dim); text-decoration: none; font-size: 13px; font-weight: 500;
+    transition: color 0.25s; letter-spacing: 0.3px;
+  }
+  nav .links a:hover { color: var(--text); }
+  nav .links .label-tag {
+    color: var(--text-mute); font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-right: 8px;
+  }
+
+  /* ===== HERO ===== */
+  .hero { padding: 140px 0 100px; }
+  .hero .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; border-radius: 24px;
+    background: rgba(108,124,255,0.1); border: 1px solid rgba(108,124,255,0.25);
+    font-size: 12px; color: var(--accent); font-weight: 600;
+    letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 28px;
+  }
+  .hero .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--success);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+    50% { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5.5vw, 76px); font-weight: 900; line-height: 1.05;
+    letter-spacing: -2px; margin-bottom: 20px;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(135deg, #6c7cff 0%, #a855f7 50%, #22d3ee 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    animation: gradShift 6s ease infinite;
+  }
+  @keyframes gradShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+  .hero .sub {
+    font-size: 18px; color: var(--text-dim); max-width: 680px; margin-bottom: 40px;
+    line-height: 1.8;
+  }
+  .hero .sub strong { color: var(--text); }
+  .hero .cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
+  .btn-primary, .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px; border-radius: 10px; font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.25s; cursor: pointer; border: none;
+  }
+  .btn-primary {
+    background: var(--gradient, linear-gradient(135deg, #6c7cff, #a855f7));
+    color: white; box-shadow: 0 8px 24px rgba(108,124,255,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(108,124,255,0.4); }
+  .btn-ghost {
+    background: transparent; color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Hero 能力块 */
+  .hero-metrics {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+    padding-top: 44px; border-top: 1px solid var(--border);
+  }
+  .cap-block {
+    background: rgba(13,19,38,0.6); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px 18px; transition: all 0.3s;
+  }
+  .cap-block:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .cap-block .cap-t {
+    font-size: 15px; font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cap-block .cap-t::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: linear-gradient(135deg, #6c7cff, #a855f7); flex-shrink: 0;
+  }
+  .cap-block .cap-d { font-size: 12.5px; color: var(--text-dim); line-height: 1.7; }
+
+  /* ===== SECTION 通用 ===== */
+  section { padding: 100px 0; }
+  .section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 16px; display: block;
+  }
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; letter-spacing: -1px;
+    line-height: 1.2; margin-bottom: 12px;
+  }
+  .section-desc { color: var(--text-dim); font-size: 15px; max-width: 720px; }
+
+  /* ===== BEFORE REFORM ===== */
+  .reform-wrap { background: var(--bg-2); border-radius: 24px; padding: 48px; border: 1px solid var(--border); }
+  .reform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 36px; }
+  .reform-col h3 {
+    font-size: 16px; font-weight: 700; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .reform-col.pain h3 { color: var(--danger); }
+  .reform-col.goal h3 { color: var(--success); }
+  .pain-item, .goal-item {
+    display: flex; gap: 14px; padding: 16px;
+    background: rgba(7,10,20,0.6); border-radius: 12px; margin-bottom: 10px;
+    border-left: 3px solid; font-size: 14px; line-height: 1.7;
+  }
+  .pain-item { border-color: var(--danger); color: var(--text-dim); }
+  .goal-item { border-color: var(--success); color: var(--text-dim); }
+  .pain-item::before { content: '✕'; color: var(--danger); font-weight: 700; flex-shrink: 0; }
+  .goal-item::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+
+  /* ===== VALUE PROPOSITION ===== */
+  .vp-block {
+    text-align: center; padding: 80px 32px; position: relative;
+  }
+  .vp-block .vp-text {
+    font-size: clamp(20px, 2.8vw, 28px); font-weight: 600;
+    line-height: 1.6; color: var(--text); max-width: 900px; margin: 0 auto;
+  }
+  .vp-block .vp-text strong {
+    background: linear-gradient(135deg, #6c7cff, #a855f7, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* ===== FULL PIPELINE ===== */
+  .pipe-phases { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+  .phase {
+    display: grid; grid-template-columns: 220px 1fr; gap: 32px;
+    padding: 40px 0; border-top: 1px solid var(--border);
+  }
+  .phase:first-of-type { border-top: none; }
+  .phase-head .phase-num {
+    font-size: 12px; font-weight: 700; letter-spacing: 2px; color: var(--accent);
+    margin-bottom: 8px; display: block;
+  }
+  .phase-head h3 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+  .phase-head .phase-sub { font-size: 13px; color: var(--text-mute); }
+
+  .phase-body h4 {
+    font-size: 15px; font-weight: 600; margin: 16px 0 10px;
+    color: var(--accent-3); display: flex; align-items: center; gap: 8px;
+  }
+  .phase-body h4::before {
+    content: ''; width: 3px; height: 14px; border-radius: 2px;
+    background: linear-gradient(135deg, #6c7cff, #a855f7);
+  }
+  .phase-body p, .phase-body li { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
+  .phase-body ul { list-style: none; }
+  .phase-body ul li { padding: 6px 0 6px 18px; position: relative; }
+  .phase-body ul li::before {
+    content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: 700;
+  }
+
+  .phase .phase-ps {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px;
+  }
+  .phase .phase-ps > div {
+    padding: 14px 16px; border-radius: 10px; font-size: 13px; line-height: 1.7;
+    border: 1px solid var(--border); background: rgba(7,10,20,0.5);
+  }
+  .phase .phase-ps > div > span {
+    display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .phase .phase-ps .ps-problem { border-left: 3px solid var(--danger); }
+  .phase .phase-ps .ps-problem > span { color: var(--danger); }
+  .phase .phase-ps .ps-solve { border-left: 3px solid var(--success); }
+  .phase .phase-ps .ps-solve > span { color: var(--success); }
+  .phase .phase-ps p { color: var(--text-dim); font-size: 13px; }
+
+  .phase .input-output {
+    display: flex; gap: 24px; margin-top: 16px; padding: 16px;
+    background: rgba(7,10,20,0.5); border-radius: 10px; font-size: 12px;
+    border: 1px solid var(--border);
+  }
+  .phase .input-output span { color: var(--text-mute); margin-right: 8px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+  .phase .input-output strong { color: var(--text-dim); font-weight: 500; }
+
+  /* ===== 交互式工作流（嵌入式） ===== */
+  .wf-embed {
+    background: var(--bg-2); border-radius: 20px; padding: 40px;
+    border: 1px solid var(--border); margin: 48px 0 0;
+  }
+  .wf-embed h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+  .wf-embed .wf-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; }
+  .wf-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .wf-visual { background: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); }
+  .wf-svg-wrap { position: relative; width: 100%; height: 400px; }
+  .wf-svg-wrap svg { width: 100%; height: 100%; }
+  .wf-node { cursor: pointer; transition: all 0.3s; }
+  .wf-node text { pointer-events: none; }
+  .wf-node:hover rect { filter: brightness(1.3); }
+  .wf-node.active rect { stroke: var(--accent); stroke-width: 3; filter: drop-shadow(0 0 12px rgba(108,124,255,0.6)); }
+  .wf-edge { stroke: var(--border); stroke-width: 2; fill: none; }
+  .wf-edge.animated { stroke: var(--accent); stroke-dasharray: 6 4; animation: dash 1s linear infinite; }
+  @keyframes dash { to { stroke-dashoffset: -10; } }
+
+  .wf-detail-panel { background: var(--card); border-radius: 16px; padding: 24px; border: 1px solid var(--border); display: flex; flex-direction: column; }
+  .wf-step-btn {
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 14px; text-align: left; cursor: pointer; transition: all 0.3s;
+    display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px;
+  }
+  .wf-step-btn:hover { border-color: var(--accent); }
+  .wf-step-btn.active {
+    background: rgba(108,124,255,0.1); border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(108,124,255,0.08);
+  }
+  .wf-step-btn .sn {
+    width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+    background: var(--bg-2); border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: var(--text-dim);
+  }
+  .wf-step-btn.active .sn { background: var(--accent); border-color: var(--accent); color: white; }
+  .wf-step-btn h5 { font-size: 14px; font-weight: 600; margin-bottom: 2px; color: var(--text); }
+  .wf-step-btn p { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+  /* ===== FUNCTION MODULES ===== */
+  .fm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .fm-card {
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; transition: all 0.35s; cursor: pointer;
+  }
+  .fm-card:hover {
+    transform: translateY(-6px); border-color: var(--accent);
+    box-shadow: 0 24px 48px rgba(108,124,255,0.15);
+  }
+  .fm-card .fm-num {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--text-mute);
+    margin-bottom: 16px;
+  }
+  .fm-card .fm-icon { font-size: 32px; margin-bottom: 14px; }
+  .fm-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .fm-card .fm-en { font-size: 11px; letter-spacing: 1.5px; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; font-weight: 600; }
+  .fm-card .fm-desc { font-size: 13px; color: var(--text-dim); line-height: 1.7; margin-bottom: 16px; }
+  .fm-card .fm-features { list-style: none; }
+  .fm-card .fm-features li {
+    font-size: 13px; color: var(--text-dim); padding: 5px 0 5px 18px; position: relative;
+  }
+  .fm-card .fm-features li::before {
+    content: '▸'; position: absolute; left: 0; color: var(--accent);
+  }
+  .fm-card .fm-foot {
+    display: flex; justify-content: space-between; margin-top: 18px; padding-top: 14px;
+    border-top: 1px dashed var(--border); font-size: 12px;
+  }
+  .fm-card .fm-foot .v { font-weight: 700; color: var(--accent); }
+
+  /* ===== BEHIND THE SYSTEM ===== */
+  .mechanisms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+  .mech-card {
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+  }
+  .mech-card h4 {
+    font-size: 16px; font-weight: 700; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .mech-card .mech-icon {
+    width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+    background: linear-gradient(135deg, rgba(108,124,255,0.2), rgba(168,85,247,0.2));
+  }
+  .mech-card p { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
+
+  /* ===== BEFORE vs AFTER ===== */
+  .compare-table {
+    width: 100%; border-collapse: collapse; margin-top: 40px;
+    background: var(--bg-2); border-radius: 20px; overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .compare-table th, .compare-table td {
+    padding: 20px 24px; text-align: left; font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare-table thead th {
+    font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--text-mute); background: rgba(7,10,20,0.5);
+  }
+  .compare-table thead th.center { color: var(--text); text-align: center; }
+  .compare-table tbody tr:last-child td { border-bottom: none; }
+  .compare-table tbody th {
+    font-size: 14px; font-weight: 700; color: var(--text);
+    background: rgba(7,10,20,0.3); width: 140px;
+  }
+  .compare-table .old td { color: var(--text-dim); }
+  .compare-table .new td { color: var(--text); font-weight: 500; }
+  .compare-table .new td .hl {
+    background: linear-gradient(135deg, #6c7cff, #a855f7);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  .compare-table th.col-pain { color: var(--danger); text-align: center; }
+  .compare-table th.col-ok { color: var(--success); text-align: center; }
+
+  /* ===== CONTACT ===== */
+  .contact-block {
+    text-align: center; padding: 80px 0 40px;
+    background: var(--bg-2); border-radius: 24px; margin-top: 40px;
+    border: 1px solid var(--border);
+  }
+  .contact-block h2 {
+    font-size: clamp(28px, 3vw, 36px); font-weight: 800; margin-bottom: 16px;
+  }
+  .contact-block p { color: var(--text-dim); margin-bottom: 32px; font-size: 15px; }
+  .contact-chips { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .contact-chips span {
+    padding: 10px 20px; border-radius: 24px;
+    background: var(--bg); border: 1px solid var(--border);
+    font-size: 13px; color: var(--text-dim);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  footer { padding: 40px 0 32px; text-align: center; color: var(--text-mute); font-size: 12px; }
+
+  /* 响应式 */
+  @media (max-width: 960px) {
+    nav .links { display: none; }
+    .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+    .phase { grid-template-columns: 1fr; gap: 16px; }
+    .reform-grid { grid-template-columns: 1fr; }
+    .phase .phase-ps { grid-template-columns: 1fr; }
+    .fm-grid { grid-template-columns: 1fr 1fr; }
+    .mechanisms { grid-template-columns: 1fr; }
+    .wf-layout { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .hero-metrics, .fm-grid { grid-template-columns: 1fr; }
+    section { padding: 70px 0; }
+  }
+
+  /* 滚动动画 */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .reveal.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+  <div class="container">
+    <div class="brand">
+      <div class="logo-mark">LM</div>
+      <div class="name"><span class="hl">林杰铭</span> · 自动化作品集</div>
+    </div>
+    <div class="links">
+      <a href="#pain"><span class="label-tag">01</span>原来卡在哪</a>
+      <a href="#pipeline"><span class="label-tag">02</span>六大类方案</a>
+      <a href="#agent"><span class="label-tag">03</span>汉印小智</a>
+      <a href="#modules"><span class="label-tag">04</span>功能模块</a>
+      <a href="#compare"><span class="label-tag">05</span>前后对比</a>
+      <a href="#contact"><span class="label-tag">06</span>联系</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span>林杰铭 · 作品集</div>
+    <h1>
+      5 年一线，我做过的<br>
+      <span class="grad">AI + RPA 自动化</span><br>
+      方案合集
+    </h1>
+    <p class="sub">
+      长期在电商与制造业一线做自动化方案：把分散的重复劳动收敛成
+      <strong>能跑、能维护、能跟上业务</strong>的小系统。
+      下面这些，是我已经实打实跑起来的 6 类事情。
+    </p>
+    <div class="cta-row">
+      <a href="#pipeline" class="btn-primary">↓ 查看六大业务域方案</a>
+      <a href="#contact" class="btn-ghost">联系我 →</a>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="cap-block reveal">
+        <div class="cap-t">电商全平台自动化</div>
+        <div class="cap-d">淘宝 / 京东 / 抖音 / 拼多多 / TEMU / 亚马逊 / TikTok Shop 多平台数据与操作自动化</div>
+      </div>
+      <div class="cap-block reveal">
+        <div class="cap-t">供应链系统集成</div>
+        <div class="cap-d">聚水潭 / 领星 / 京东 SAP / WMS / 自研系统之间的对账、库存、物流打通</div>
+      </div>
+      <div class="cap-block reveal">
+        <div class="cap-t">企业级 AI 智能体</div>
+        <div class="cap-d">基于 Dify 的多轮对话 Agent：意图路由、槽位抽取、RAG 检索、失败兜底</div>
+      </div>
+      <div class="cap-block reveal">
+        <div class="cap-t">数据监控与预警</div>
+        <div class="cap-d">定时采集 + 清洗汇总 + 异常检测，企微 / 邮件自动告警替代人工巡检</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE REFORM -->
+<section id="pain">
+  <div class="container">
+    <span class="section-label">01 · BEFORE</span>
+    <h2 class="section-title">原来卡在哪里？</h2>
+    <p class="section-desc">各部门零散提出自动化需求，应用陆续堆叠形成，但业务、技术、数据三条线仍是「孤岛 + 人工」。</p>
+
+    <div class="reform-wrap">
+      <div class="reform-grid">
+        <div class="reform-col pain">
+          <h3>✕ 改造前的 5 大痛点</h3>
+          <div class="pain-item">自动化应用靠需求堆叠，缺乏统一设计与专人维护，技术债重，故障与数据漂移风险持续上升</div>
+          <div class="pain-item">各部门各自为战：客服、采供、跨境、新零售、运营、财务，需求分散、无法复用</div>
+          <div class="pain-item">业务变化 → 应用跟不上 → 人工补位 → 新的需求 → 恶性循环，应用与业务逐渐脱节</div>
+          <div class="pain-item">智能程度低：自动化能跑但不会判断，遇到异常只能靠人发现、人工兜底</div>
+          <div class="pain-item">缺乏 AI 智能助手，员工找数据、问系统、查知识库，依赖同事口口相传</div>
+        </div>
+        <div class="reform-col goal">
+          <h3>✓ 改造目标</h3>
+          <div class="goal-item">存量应用从「堆叠」转为「可维护资产」，巡检 + 监控 + Runbook + 自愈重试</div>
+          <div class="goal-item">各部门需求按业务域归位，形成可复用的模板化组件与交付标准</div>
+          <div class="goal-item">业务规则变化 → 应用快速迭代，上线后有复盘，持续跟上业务节奏</div>
+          <div class="goal-item">AI 嵌入关键节点：意图判断、质检评分、舆情预警、失败兜底，自动化 → 智能应用</div>
+          <div class="goal-item">建设企业级多轮对话智能助手，员工自然语言即可查数据、问系统、查知识库</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section>
+  <div class="container">
+    <div class="vp-block reveal">
+      <h2 class="section-label" style="text-align:center;">一句话说我在做什么</h2>
+      <p class="vp-text">
+        就是把客服、供应链、跨境运营、数据监控这些<strong>重复、碎、容易错</strong>的事情，
+        用 RPA + AI 搭成能自己跑的小系统，让人不用再靠 "记住某件事要在某个时间点手动做" 活着。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FULL PIPELINE -->
+<section id="pipeline">
+  <div class="container">
+    <span class="section-label">02 · 六大类方案</span>
+    <h2 class="section-title">每类都做过不止一遍</h2>
+    <p class="section-desc">每个业务域对应一类共性问题：先看它原本卡在哪，再看我用什么方式把它做成可复用的方案。</p>
+
+    <div class="pipe-phases">
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 01</span>
+          <h3>客服智能化</h3>
+          <div class="phase-sub">5 大电商平台</div>
+        </div>
+        <div class="phase-body">
+          <p>覆盖淘宝 / 京东 / 抖音 / 拼多多 / 店小秘多平台，把传统客服从「凭经验」升级为「数据驱动 + AI 辅助」。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>聊天记录散落在多个平台、质检靠人工抽听、退货原因说不清，管理者只能凭感觉判断服务质量。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>会话自动归档 + AI 多维质检 + 原因聚类分析，把「看不完的会话」变成可检索、可评分、可归因的结构化数据。</p></div>
+          </div>
+          <h4>多平台聊天记录自动抓取</h4>
+          <p>跨平台（纯机/京东/抖店/拼多多/淘宝/店小秘/企微群）聊天记录自动归档，支持按关键词、日期、客服快速检索。</p>
+          <h4>AI 售前售后技术质检</h4>
+          <p>多机型（MT56i / Z6 / W1 / FT 等）售前售后对话质检，检测话术合规、产品知识性、服务态度三大维度。</p>
+          <h4>退货原因 / 咨询原因智能分析</h4>
+          <p>按机型、按平台、按时间维度聚合退货原因与咨询内容，识别 Top 问题点，驱动产品优化。</p>
+          <h4>舆情与满意度监控</h4>
+          <p>小红书舆情抓取、多平台差评 / 客诉实时预警、满意度自动抓取汇总，异常自动通知。</p>
+          <div class="input-output">
+            <span>输入</span><strong>多平台会话、订单、评价数据</strong>
+            <span>输出</span><strong>质检报告 · 原因分析 · 舆情预警 · 满意度看板</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 02</span>
+          <h3>供应链自动化</h3>
+          <div class="phase-sub">6 大系统集成</div>
+        </div>
+        <div class="phase-body">
+          <p>打通聚水潭 / 领星 / 京东 SAP / WMS / 自研系统，库存、出入库、物流、对账全链路自动化运行。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>库存分散在多套系统，对账靠人工拉表比对，异常订单靠人盯，链路一长就容易错漏、扯皮。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>以单据为主线做系统间自动流转：规则触发变更、账单自动对账、异常自动拦截，人工只在规则变更时介入。</p></div>
+          </div>
+          <h4>WMS 逻辑仓自动变更</h4>
+          <p>规则触发 WMS 逻辑仓变更，消除人工操作，减少 80% 仓配异常。</p>
+          <h4>京东 SAP 自动对账 + 物流下单</h4>
+          <p>京东 SAP 账单自动拉取与对账、京东物流自动下单（含达人渠道），消除重复人工。</p>
+          <h4>序列号 / 料号批量查询</h4>
+          <p>按料号查出入库数量、按序列号查明细、查询 BOM 结构、查询长交期物料，供应链快速响应。</p>
+          <h4>分销自动拦截 + 供应链库存多源监控</h4>
+          <p>异常订单自动拦截快递，实时监控聚水潭 / 领星 / 大库三源库存，滞销库存自动识别。</p>
+          <div class="input-output">
+            <span>输入</span><strong>WMS / 聚水潭 / 领星 / 京东 SAP / ERP</strong>
+            <span>输出</span><strong>自动对账 · 自动拦截 · 库存视图 · 异常告警</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 03</span>
+          <h3>跨境电商运营</h3>
+          <div class="phase-sub">4 大跨境平台</div>
+        </div>
+        <div class="phase-body">
+          <p>TEMU / 亚马逊 / TikTok Shop / 领星，全球站点数据采集与运营操作自动化。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>各站点后台彼此独立，导出、回填、监控都要人工逐个登录操作，多店多站点时工作量成倍放大。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>统一入口 + 定时任务：数据自动采集汇总、单号与库存自动回填、LISTING 与库存异常自动提醒。</p></div>
+          </div>
+          <h4>TEMU / 亚马逊 数据采集</h4>
+          <p>TEMU 销售数据自动导出、亚马逊广告周报自动下载、亚马逊关怀邮件自动发送。</p>
+          <h4>TikTok Shop 物流与内容</h4>
+          <p>TikTok 物流单号回填、消息提醒监控、库存查询、视频下载，跨境运营全链路支持。</p>
+          <h4>领星 LISTING 监控 + FBT 库存提醒</h4>
+          <p>LISTING 健康状态（权限 / 合规 / 异常）自动巡检，FBT 库存低于阈值自动提醒。</p>
+          <div class="input-output">
+            <span>输入</span><strong>TEMU / Amazon / TikTok Shop / 领星</strong>
+            <span>输出</span><strong>销售报表 · 广告数据 · LISTING 监控 · 库存提醒</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 04</span>
+          <h3>数据采集与监控</h3>
+          <div class="phase-sub">采集 · 清洗 · 预警</div>
+        </div>
+        <div class="phase-body">
+          <p>企业级数据采集基础设施，多平台数据自动拉取、清洗、汇总，配合定时调度实现异常实时预警。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>数据分散在网页、API、Excel 里，人工复制粘贴既慢又易错；出了问题往往是事后才发现。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>把「采集 - 清洗 - 汇总 - 校验 - 告警」固化为标准管道，同一套模板换数据源即可复用。</p></div>
+          </div>
+          <h4>产线 + 仓库 实时监控</h4>
+          <p>产线数据监控、准新机仓未发货提醒、WMS 回传异常自动告警、仓库报表自动监控。</p>
+          <h4>多平台数据采集</h4>
+          <p>快捞数据抓取、多平台综合分数抓取、淘宝发票抓取、退款数据下载、抖音数据抓取。</p>
+          <h4>销售报表自动导出</h4>
+          <p>销售分析统计（定时）、出货数据统计、月度成交金额统计、领星 MSKU 数据导出。</p>
+          <div class="input-output">
+            <span>输入</span><strong>多平台 API / 网页 / Excel</strong>
+            <span>输出</span><strong>报表 · 看板 · 企微 / 邮件告警</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 05</span>
+          <h3>AI 智能体</h3>
+          <div class="phase-sub">多轮对话 Agent · 9 系统接入</div>
+        </div>
+        <div class="phase-body">
+          <p>主导搭建的企业级多轮对话智能体——汉印小智。集成意图路由、槽位抽取、RAG 知识库检索、失败兜底策略，让员工自然语言就能查数据、问系统。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>员工查库存、问订单、找流程要跨多个系统或问同事，响应慢、口径不一，知识沉淀在个人身上。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>用一个对话入口承接常见查询：先识别意图与参数，再调对应系统接口，查不到自动转知识库，并做权限校验与失败兜底。</p></div>
+          </div>
+          <h4>13 种功能意图自动识别</h4>
+          <p>库存查询 / WMS 变更 / 京东下单 / 维修查询 / 出入库 / 原材入库 / 京东库存 / 内购 / 长交期物料 / 云计费 / BOM 查询 等。</p>
+          <h4>9 大内部系统 API 直连</h4>
+          <p>库存、出入库、WMS、京东订单、维修、原材、内购、长交期、云计费，每个接口含重试与超时保护。</p>
+          <h4>RAG 检索 + 失败兜底</h4>
+          <p>API 异常自动走知识库检索路径，重排序 + top_k 调优提升召回准确率；硬约束提示词控制幻觉。</p>
+          <div class="input-output">
+            <span>输入</span><strong>员工自然语言查询</strong>
+            <span>输出</span><strong>结构化业务回答 / 引导提问</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase reveal">
+        <div class="phase-head">
+          <span class="phase-num">PHASE 06</span>
+          <h3>运营 / 财务 / 管理支持</h3>
+          <div class="phase-sub">高频重复场景</div>
+        </div>
+        <div class="phase-body">
+          <p>覆盖发票处理、报表下载、采购标签打印、自动巡店、认证管理等非业务核心但高频重复的操作场景。</p>
+          <div class="phase-ps">
+            <div class="ps-problem"><span>解决的问题</span><p>不产生业务价值却每天都要做：下载报表、回传发票、打标签、巡店，占掉大量碎片时间又容易漏。</p></div>
+            <div class="ps-solve"><span>方案思路</span><p>按场景做「一键化 + 定时化」的小工具，统一异常通知，把固定动作全部交给系统按点执行。</p></div>
+          </div>
+          <h4>运营支持</h4>
+          <p>发票信息抓取 / 发票冲红 / 发票回传、退款数据自动下载、消费券核销、企微群文章抓取。</p>
+          <h4>财务支持</h4>
+          <p>TK 报表自动下载、抖音发票自动回传、亚马逊报表下载、分销对账处理。</p>
+          <h4>管理 / 采购 / 认证</h4>
+          <p>采购标签批量打印（聚水潭）、认证管理证书上传、汉印云计费系统停机保号、自动巡店。</p>
+          <div class="input-output">
+            <span>输入</span><strong>运营 / 财务 / 管理部门需求</strong>
+            <span>输出</span><strong>自动化批量操作 · 周期性报表</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 交互式 AI Agent 工作流 -->
+<section id="agent">
+  <div class="container">
+    <span class="section-label">03 · AI 智能体</span>
+    <h2 class="section-title">汉印小智 · 交互式工作流</h2>
+    <p class="section-desc">点击左侧节点或右侧步骤，探索 Dify 78 节点多轮对话智能体的核心处理路径。</p>
+
+    <div class="wf-embed reveal">
+      <h3>🤖 汉印小智机器人</h3>
+      <p class="wf-sub">企业内部多轮对话智能助手 · 覆盖供应链 9 大查询场景 · Dify Workflow + RAG + 9 System APIs</p>
+
+      <div class="wf-layout">
+        <div class="wf-visual">
+          <div class="wf-svg-wrap">
+            <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid meet" id="wfSvg">
+              <path class="wf-edge" d="M250,45 L250,85" data-from="start" data-to="slot"/>
+              <path class="wf-edge" d="M250,125 L250,165" data-from="slot" data-to="gate"/>
+              <path class="wf-edge" d="M250,210 L130,260" data-from="gate" data-to="route"/>
+              <path class="wf-edge" d="M250,210 L370,260" data-from="gate" data-to="route2"/>
+              <path class="wf-edge" d="M130,300 L130,340" data-from="route" data-to="api"/>
+              <path class="wf-edge" d="M370,300 L370,340" data-from="route2" data-to="kb"/>
+              <path class="wf-edge" d="M130,385 L250,355 L370,385" data-from="api" data-to="end"/>
+              <path class="wf-edge" d="M370,385 L250,370 L130,385" data-from="kb" data-to="end"/>
+
+              <g class="wf-node active" data-node="start">
+                <rect x="150" y="15" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="250" y="38" text-anchor="middle" fill="#8a94b8" font-size="11">Step 01</text>
+                <text x="250" y="58" text-anchor="middle" fill="#6c7cff" font-size="12" font-weight="bold">用户输入 Query</text>
+              </g>
+              <g class="wf-node" data-node="slot">
+                <rect x="150" y="85" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="250" y="108" text-anchor="middle" fill="#8a94b8" font-size="11">Step 02</text>
+                <text x="250" y="128" text-anchor="middle" fill="#a855f7" font-size="12" font-weight="bold">槽位抽取 + 路由</text>
+              </g>
+              <g class="wf-node" data-node="gate">
+                <polygon points="250,165 300,210 250,255 200,210" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="250" y="205" text-anchor="middle" fill="#8a94b8" font-size="10">Step 03</text>
+                <text x="250" y="222" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">参数</text>
+                <text x="250" y="236" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">完整?</text>
+              </g>
+              <g class="wf-node" data-node="route">
+                <rect x="30" y="260" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="130" y="283" text-anchor="middle" fill="#8a94b8" font-size="11">Step 04a</text>
+                <text x="130" y="303" text-anchor="middle" fill="#22d3ee" font-size="12" font-weight="bold">分派 → 13 Paths</text>
+              </g>
+              <g class="wf-node" data-node="route2">
+                <rect x="270" y="260" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="370" y="283" text-anchor="middle" fill="#8a94b8" font-size="11">Step 04b</text>
+                <text x="370" y="303" text-anchor="middle" fill="#f472b6" font-size="12" font-weight="bold">引导补充参数</text>
+              </g>
+              <g class="wf-node" data-node="api">
+                <rect x="30" y="340" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="130" y="363" text-anchor="middle" fill="#8a94b8" font-size="11">Step 05a</text>
+                <text x="130" y="383" text-anchor="middle" fill="#34d399" font-size="12" font-weight="bold">API + 权限校验</text>
+              </g>
+              <g class="wf-node" data-node="kb">
+                <rect x="270" y="340" width="200" height="55" rx="10" fill="#121b36" stroke="#1c2948" stroke-width="2"/>
+                <text x="370" y="363" text-anchor="middle" fill="#8a94b8" font-size="11">Step 05b</text>
+                <text x="370" y="383" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">RAG 兜底</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="wf-detail-panel">
+          <h4 style="font-size:14px; font-weight:600; margin-bottom:16px;">📋 5 步处理流程（点击联动）</h4>
+          <div>
+            <div class="wf-step-btn active" data-node="start">
+              <div class="sn">1</div>
+              <div>
+                <h5>用户输入</h5>
+                <p>接收自然语言查询，进入多轮对话上下文</p>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-dim); padding: 8px 12px 12px 44px; background:rgba(7,10,20,0.4); border-radius:8px; margin-bottom:10px; line-height:1.6;">
+              会话变量维持多轮对话。例：先问 "SN 有库存吗"，再追 "最近入库时间呢"，自动关联。
+            </div>
+
+            <div class="wf-step-btn" data-node="slot">
+              <div class="sn">2</div>
+              <div>
+                <h5>槽位抽取 + 功能词路由</h5>
+                <p>Python 正则抽取编号 / 手机号，匹配 13 种功能意图</p>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-dim); padding: 8px 12px 12px 44px; background:rgba(7,10,20,0.4); border-radius:8px; margin-bottom:10px; display:none;">
+              路由规则覆盖：库存查询、WMS 变更、京东下单、维修、出入库、原材入库、京东库存、内购、长交期物料、云计费、BOM 等。
+            </div>
+
+            <div class="wf-step-btn" data-node="gate">
+              <div class="sn">3</div>
+              <div>
+                <h5>参数完整性校验</h5>
+                <p>必要参数齐全？缺失则引导补充</p>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-dim); padding: 8px 12px 12px 44px; background:rgba(7,10,20,0.4); border-radius:8px; margin-bottom:10px; display:none;">
+              用户只说 "查库存" 没给料号 → 回复 "请提供料号或规格名称"，避免无效 API 调用。
+            </div>
+
+            <div class="wf-step-btn" data-node="route">
+              <div class="sn">4</div>
+              <div>
+                <h5>意图分派 → API / 引导</h5>
+                <p>按功能类型调用对应内部系统，含权限校验</p>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-dim); padding: 8px 12px 12px 44px; background:rgba(7,10,20,0.4); border-radius:8px; margin-bottom:10px; display:none;">
+              HTTP Request 节点对接 9 大系统：库存、出入库、WMS、京东订单、维修、原材、内购、长交期、云计费。每个接口含重试与超时保护。
+            </div>
+
+            <div class="wf-step-btn" data-node="kb">
+              <div class="sn">5</div>
+              <div>
+                <h5>RAG 知识库兜底</h5>
+                <p>检测失败关键词 → 自动走知识库检索</p>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-dim); padding: 8px 12px 12px 44px; background:rgba(7,10,20,0.4); border-radius:8px; display:none;">
+              硬约束提示词控制幻觉：检测 "暂无权限/无法查询/未找到" → 自动切换 RAG 检索路径，不会返回空结果。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCTION MODULES -->
+<section id="modules">
+  <div class="container">
+    <span class="section-label">04 · 功能模块</span>
+    <h2 class="section-title">五大功能模块 · 独立演进</h2>
+    <p class="section-desc">五个模块共享同一套任务调度与模板化组件底座，可独立部署、独立迭代。</p>
+
+    <div class="fm-grid reveal">
+      <div class="fm-card">
+        <div class="fm-num">01</div>
+        <div class="fm-icon">🎧</div>
+        <h3>客服智能化</h3>
+        
+        <p class="fm-desc">多平台（淘宝 / 京东 / 抖音 / 拼多多 / 店小秘）会话质检、舆情分析、退货原因智能归因。</p>
+        <ul class="fm-features">
+          <li>多平台聊天记录自动抓取</li>
+          <li>售前售后技术质检（多机型）</li>
+          <li>退货 / 咨询原因智能分析</li>
+          <li>小红书舆情监控预警</li>
+        </ul>
+        <div class="fm-foot"><span>多平台会话治理</span><span class="v">5 平台接入</span></div>
+      </div>
+
+      <div class="fm-card">
+        <div class="fm-num">02</div>
+        <div class="fm-icon">📦</div>
+        <h3>供应链自动化</h3>
+        
+        <p class="fm-desc">打通聚水潭 / 领星 / 京东 SAP / WMS / 自研系统，库存、出入库、物流、对账全链路自动化。</p>
+        <ul class="fm-features">
+          <li>WMS 逻辑仓自动变更</li>
+          <li>序列号 / 料号批量查询</li>
+          <li>京东 SAP 自动对账</li>
+          <li>京东物流自动下单</li>
+        </ul>
+        <div class="fm-foot"><span>单据全链路自动化</span><span class="v">6 系统集成</span></div>
+      </div>
+
+      <div class="fm-card">
+        <div class="fm-num">03</div>
+        <div class="fm-icon">🌐</div>
+        <h3>跨境电商运营</h3>
+        
+        <p class="fm-desc">TEMU / 亚马逊 / TikTok Shop / 领星，全球站点数据采集与运营操作自动化。</p>
+        <ul class="fm-features">
+          <li>TEMU 销售数据自动导出</li>
+          <li>亚马逊广告周报下载</li>
+          <li>TikTok Shop 物流回填</li>
+          <li>领星 LISTING 监控</li>
+        </ul>
+        <div class="fm-foot"><span>多站点运营提效</span><span class="v">4 平台接入</span></div>
+      </div>
+
+      <div class="fm-card">
+        <div class="fm-num">04</div>
+        <div class="fm-icon">📊</div>
+        <h3>数据采集与监控</h3>
+        
+        <p class="fm-desc">企业级数据采集基础设施，多平台数据自动拉取、清洗、汇总，定时调度 + 异常实时预警。</p>
+        <ul class="fm-features">
+          <li>产线 / 仓库 实时监控</li>
+          <li>WMS 回传异常自动告警</li>
+          <li>销售报表自动导出</li>
+          <li>滞销库存自动识别</li>
+        </ul>
+        <div class="fm-foot"><span>标准采集管道</span><span class="v">定时 + 告警</span></div>
+      </div>
+
+      <div class="fm-card" style="grid-column: span 2;">
+        <div class="fm-num">05</div>
+        <div style="display:flex; gap:20px;">
+          <div>
+            <div class="fm-icon">🤖</div>
+            <h3>AI 智能体 + RAG（汉印小智）</h3>
+            
+          </div>
+          <div style="flex:1;">
+            <p class="fm-desc" style="margin-bottom:12px;">主导搭建的 Dify 多轮对话智能体，78 节点工作流，集成意图路由、槽位抽取、RAG 检索、9 系统 API 对接、失败兜底与权限校验。</p>
+            <ul class="fm-features" style="display:grid; grid-template-columns: 1fr 1fr; gap: 2px 16px;">
+              <li>13 种功能意图自动路由</li>
+              <li>槽位抽取（编号 / 手机号）</li>
+              <li>RAG + Rerank 检索优化</li>
+              <li>9 大内部系统 API 直连</li>
+              <li>硬约束失败兜底设计</li>
+              <li>内置权限校验</li>
+            </ul>
+          </div>
+          <div style="flex-shrink:0; display:flex; flex-direction:column; gap:8px; text-align:right;">
+            <div style="font-size:12px; padding:4px 10px; border-radius:6px; background:rgba(108,124,255,0.12); color:#6c7cff; font-weight:600;">意图路由</div>
+            <div style="font-size:12px; padding:4px 10px; border-radius:6px; background:rgba(52,211,153,0.12); color:#34d399; font-weight:600;">系统直连</div>
+            <div style="font-size:12px; padding:4px 10px; border-radius:6px; background:rgba(251,191,36,0.12); color:#fbbf24; font-weight:600;">RAG 兜底</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE vs AFTER -->
+<section id="compare">
+  <div class="container">
+    <span class="section-label">05 · 前后对比</span>
+    <h2 class="section-title">传统模式 vs 系统性交付</h2>
+    <p class="section-desc">零散人工 vs 模块化系统，当业务规模上来，系统性交付的优势会越来越显著。</p>
+
+    <div class="reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>维度</th>
+            <th class="col-pain">✕ 改造前</th>
+            <th class="col-ok">✓ 改造后</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="old"><th>需求响应</th><td>零散接需求，一人一事，重复做同类工具</td><td class="new">先归域再设计，<span class="hl">同类场景复用同一套模板</span></td></tr>
+          <tr class="old"><th>系统维护</th><td>没人专职维护，故障靠人工救火</td><td class="new">巡检 + 监控 + Runbook + 自愈重试，<span class="hl">异常可发现、可恢复</span></td></tr>
+          <tr class="old"><th>AI 能力</th><td>只能执行固定流程，不会判断</td><td class="new">AI 嵌入关键节点：意图识别、质检评分、<span class="hl">失败兜底</span></td></tr>
+          <tr class="old"><th>系统对接</th><td>逐个系统点对点，接口口径各异</td><td class="new">统一接口规范与重试超时保护，<span class="hl">多系统稳定串联</span></td></tr>
+          <tr class="old"><th>异常处理</th><td>出错后靠人发现、靠人补救</td><td class="new">关键节点自动校验 + 企微 / 邮件<span class="hl">实时告警</span></td></tr>
+          <tr class="old"><th>知识沉淀</th><td>经验留在个人，新人重新摸索</td><td class="new"><span class="hl">汉印小智</span>多轮对话 Agent，自然语言即可查数据、问流程</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-block reveal">
+      <span class="section-label">06 · 聊聊</span>
+      <h2>有兴趣，找我聊聊</h2>
+      <p>不管是哪一行，只要有 "这件事总有人在手动重复做"，大概率可以变成自动化方案。</p>
+      <div class="contact-chips">
+        <span>📱 187-5078-2882</span>
+        <span>📧 1152730084@qq.com</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    © 2026 林杰铭 · 个人作品集
+  </div>
+</footer>
+
+<script>
+/* 1. 粒子背景 */
+(function() {
+  const canvas = document.getElementById('particles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const mouse = { x: -9999, y: -9999 };
+  function resize() {
+    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { resize(); setTimeout(resize, 100); });
+  } else { resize(); setTimeout(resize, 100); }
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+  class P {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 1.6 + 0.4;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
+      this.op = Math.random() * 0.35 + 0.1;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+    draw() {
+      ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(108,124,255,${this.op})`; ctx.fill();
+    }
+  }
+  for (let i = 0; i < 80; i++) particles.push(new P());
+
+  function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => { p.update(); p.draw(); });
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 130) {
+          ctx.beginPath(); ctx.strokeStyle = `rgba(108,124,255,${(1 - dist / 130) * 0.1})`;
+          ctx.lineWidth = 1; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
+        }
+      }
+      const dx = particles[i].x - mouse.x, dy = particles[i].y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 180) {
+        ctx.beginPath(); ctx.strokeStyle = `rgba(168,85,247,${(1 - dist / 180) * 0.25})`;
+        ctx.lineWidth = 1.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+
+/* 2. 滚动淡入 */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('show'); revealObs.unobserve(entry.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* 3. 工作流交互 */
+const nodeToBtn = { start: 'start', slot: 'slot', gate: 'gate', route: 'route', route2: 'kb', api: 'route', kb: 'kb' };
+const wfSteps = document.querySelectorAll('.wf-step-btn');
+const wfDetails = document.querySelectorAll('.wf-detail-panel > div > div:nth-child(even)');
+function activateBtn(btnNode) {
+  wfSteps.forEach(b => b.classList.remove('active'));
+  btnNode.classList.add('active');
+  const idx = Array.from(wfSteps).indexOf(btnNode);
+  wfDetails.forEach(d => d.style.display = 'none');
+  if (wfDetails[idx]) wfDetails[idx].style.display = 'block';
+
+  const btnNodeId = btnNode.dataset.node;
+  document.querySelectorAll('.wf-node').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll(`.wf-node[data-node="${btnNodeId}"]`).forEach(n => n.classList.add('active'));
+  Object.entries(nodeToBtn).forEach(([k, v]) => { if (v === btnNodeId) document.querySelector(`.wf-node[data-node="${k}"]`)?.classList.add('active'); });
+
+  document.querySelectorAll('.wf-edge').forEach(e => e.classList.remove('animated'));
+  document.querySelectorAll('.wf-node.active').forEach(n => {
+    const id = n.dataset.node;
+    document.querySelectorAll(`.wf-edge[data-from="${id}"], .wf-edge[data-to="${id}"]`).forEach(e => e.classList.add('animated'));
+  });
+}
+wfSteps.forEach(btn => btn.addEventListener('click', () => activateBtn(btn)));
+document.querySelectorAll('.wf-node').forEach(node => {
+  node.style.cursor = 'pointer';
+  node.addEventListener('click', () => {
+    const btnId = nodeToBtn[node.dataset.node] || node.dataset.node;
+    const btn = document.querySelector(`.wf-step-btn[data-node="${btnId}"]`);
+    if (btn) activateBtn(btn);
+  });
+});
+
+/* 6. 平滑锚点 */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
+
+
